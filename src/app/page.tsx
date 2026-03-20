@@ -5,7 +5,7 @@ import { createServerClient } from '@/lib/supabase-server'
 export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
   const { data: listings, error } = await supabase
     .from('listings')
     .select('id, title, daily_price, image_url')

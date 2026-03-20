@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { createServerClient } from '@/lib/supabase-server'
 
+export const dynamic = 'force-dynamic'
+
 export default async function HomePage() {
   const supabase = createServerClient()
   const { data: listings, error } = await supabase
